@@ -4,6 +4,7 @@ class AppInfo {
   String _name;
   String _faculty;
   String _detail;
+  String _status;
   DateTime _dateAndTime;
   int _staffid;
 
@@ -21,6 +22,9 @@ class AppInfo {
 
   get staffid => _staffid;
   set staffid(value) => _staffid = value;
+
+  get status => _status;
+  set status(value) => _status = value;
 
   get dateAndTime => _dateAndTime;
   set dateAndTime(value) => _dateAndTime = value;

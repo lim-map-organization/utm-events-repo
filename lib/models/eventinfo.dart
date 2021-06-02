@@ -7,6 +7,7 @@ class EventInfo {
   String _organization;
   String _code;
   String _contact;
+  String _status;
   DateTime _dateAndTime;
 
   get id => _id;
@@ -29,6 +30,9 @@ class EventInfo {
 
   get contact => _contact;
   set contact(value) => _contact = value;
+
+  get status => _status;
+  set status(value) => _status = value;
 
   get dateAndTime => _dateAndTime;
   set dateAndTime(value) => _dateAndTime = value;

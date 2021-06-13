@@ -9,6 +9,7 @@ class EventInfo {
   String _contact;
   String _status;
   DateTime _dateAndTime;
+  int _studentid;
 
   get id => _id;
   set id(value) => _id = value;
@@ -37,8 +38,11 @@ class EventInfo {
   get dateAndTime => _dateAndTime;
   set dateAndTime(value) => _dateAndTime = value;
 
+  get studentid => _studentid;
+  set studentid(value) => _studentid = value;
+
   EventInfo({int id, String name='', String venue='', String organization='', String code='', 
-    String contact='', String timeslot='', DateTime dateAndTime
+    String contact='', String timeslot='', DateTime dateAndTime, int studentid
   })
     : _id = id,
     _name = name,
@@ -47,7 +51,8 @@ class EventInfo {
     _code = code,
     _contact = contact,
     _timeslot = timeslot,
-    _dateAndTime = dateAndTime;
+    _dateAndTime = dateAndTime,
+    _studentid = studentid;
 
   EventInfo.copy(EventInfo from)
     : this(
@@ -58,7 +63,8 @@ class EventInfo {
       code: from.code,
       contact: from.contact,
       timeslot: from.timeslot,
-      dateAndTime: from.dateAndTime
+      dateAndTime: from.dateAndTime,
+      studentid: from.studentid
     );
 
 }

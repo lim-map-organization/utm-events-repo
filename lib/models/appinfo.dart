@@ -7,6 +7,7 @@ class AppInfo {
   String _status;
   DateTime _dateAndTime;
   int _staffid;
+  int _studentid;
 
   get id => _id;
   set id(value) => _id = value;
@@ -29,14 +30,18 @@ class AppInfo {
   get dateAndTime => _dateAndTime;
   set dateAndTime(value) => _dateAndTime = value;
 
-  AppInfo({int id, String name='', String faculty='', String detail='', int staffid, DateTime dateAndTime
+  get studentid => _studentid;
+  set studentid(value) => _studentid = value;
+
+  AppInfo({int id, String name='', String faculty='', String detail='', int staffid, DateTime dateAndTime, int studentid
   })
     : _id = id,
     _name = name,
     _faculty = faculty,
     _detail = detail,
     _staffid = staffid,
-    _dateAndTime = dateAndTime;
+    _dateAndTime = dateAndTime,
+    _studentid = studentid;
 
   AppInfo.copy(AppInfo from)
     : this(
@@ -45,7 +50,8 @@ class AppInfo {
       name: from.name,
       detail: from.detail,
       staffid: from.staffid,
-      dateAndTime: from.dateAndTime
+      dateAndTime: from.dateAndTime,
+      studentid: from.studentid
     );
 
 }

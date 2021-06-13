@@ -2,7 +2,7 @@ class Users {
 
   int _id;
   String _name;
-  String _email;
+  String _username;
   String _phone;
   String _password;
   String _role;
@@ -26,11 +26,11 @@ class Users {
   get faculty => _faculty;
   set faculty(value) => _faculty = value;
 
-  get email => _email;
-  set email(value) => _email = value;
+  get username => _username;
+  set username(value) => _username = value;
 
   Users({int id, String name='', String phone='', String password='', String role='', String faculty='',
-    String email=''
+    String username=''
   })
     : _id = id,
     _name = name,
@@ -38,7 +38,7 @@ class Users {
     _password = password,
     _role = role,
     _faculty = faculty,
-    _email = email;
+    _username = username;
 
   Users.copy(Users from)
     : this(
@@ -48,7 +48,7 @@ class Users {
       password: from.password,
       role: from.role,
       faculty: from.faculty,
-      email: from.email
+      username: from.username
     );
 
 }

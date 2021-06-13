@@ -19,9 +19,9 @@ class Body extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: TextFormField(
             decoration: const InputDecoration(
-              labelText: 'Email',
-              hintText: 'Enter your email.',
-              icon: Icon(Icons.email)
+              labelText: 'Username',
+              hintText: 'Enter your username.',
+              icon: Icon(Icons.account_box)
             ),
             onChanged: (val) {},
           ),

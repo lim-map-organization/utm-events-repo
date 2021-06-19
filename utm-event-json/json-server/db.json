@@ -1,0 +1,211 @@
+{
+  "event-user": [
+    {
+      "id": 1,
+      "username": "leowzt",
+      "email": "leow",
+      "phoneNo": "012-345 6789",
+      "password": "123",
+      "organization": "School Of Computing",
+      "identity": "student"
+    },
+    {
+      "id": 2,
+      "username": "jumail",
+      "email": "jum",
+      "phoneNo": "012-345 6789",
+      "password": "123",
+      "organization": "School Of Computing",
+      "identity": "staff"
+    },
+    {
+      "id": 3,
+      "username": "haozhe",
+      "email": "hao@gmail.com",
+      "phoneNo": "011",
+      "password": "123",
+      "organization": "UTM Faculty of Engineering",
+      "identity": "student"
+    },
+    {
+      "id": 4,
+      "username": "baoren",
+      "email": "xd",
+      "phoneNo": "012-3652112",
+      "password": "123",
+      "organization": "School Of Computing",
+      "identity": "student"
+    },
+    {
+      "id": 5,
+      "username": "jason Tan",
+      "email": "jason@gmail.com",
+      "phoneNo": "012",
+      "password": "123",
+      "organization": "School Of Computing",
+      "identity": "staff"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "Cuti Umum Hari Pekerja",
+      "desc": "Hari Pekerja adalah sambutan pencapaian ekonomi dan sosial pekerja.",
+      "photo": "worker.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Kawasan Larang Rokok",
+      "desc": "UTM telah menguatkuasa tempat larang merokok mulai 30 April 2021.",
+      "photo": "xsmoke.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Amalan Meraih Ganjaran",
+      "desc": "Aktiviti ini dijalankan untuk meraih ganjaran Al-Qadr bagi wanita.",
+      "photo": "woman.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Final Sem Break",
+      "desc": "Enjoy the long and beautiful sem break. Looking forward",
+      "photo": "holiday.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Final Presentation",
+      "desc": "Please be ready for your presentation for you event. Stay tuned.",
+      "photo": "present.jpg"
+    }
+  ],
+  "appointment": [
+    {
+      "id": 1,
+      "title": "Catering Meeting",
+      "date": "20-6-2021",
+      "time": "8.00 am",
+      "staff": 2,
+      "organization": "Catering Kokq",
+      "user": 1,
+      "status": "Pending",
+      "reason": "Pass the letter and discuss about the proposal. "
+    },
+    {
+      "id": 2,
+      "title": "PSM 1 Meeting",
+      "date": "15-6-2021",
+      "time": "3.00 pm",
+      "staff": 2,
+      "organization": "School of Computing",
+      "user": 2,
+      "status": "approve",
+      "reason": "Pass the letter and discuss about the proposal. "
+    },
+    {
+      "id": 3,
+      "title": "Kokq Proposal",
+      "date": "30-6-2021",
+      "time": "2.00 pm",
+      "staff": 3,
+      "organization": "Kokq Team",
+      "user": 2,
+      "status": "reject",
+      "reason": "Pass the letter and discuss about the proposal. "
+    },
+    {
+      "id": 5,
+      "title": "Progress Checking",
+      "date": "03-07-2021",
+      "time": "06:30pm",
+      "staff": 2,
+      "organization": "School Of Computing",
+      "user": 1,
+      "status": "attend",
+      "reason": "Discuss about the Map Project"
+    },
+    {
+      "id": 6,
+      "title": "Crotia vs Czech",
+      "date": "20-06-2021",
+      "time": "06:20am",
+      "staff": 2,
+      "organization": "School of Mechanical.Eng",
+      "user": 3,
+      "status": "pending",
+      "reason": "Euro cup"
+    },
+    {
+      "id": 7,
+      "title": "Czhe vs Crotia",
+      "date": "21-03-2021",
+      "time": "06:20pm",
+      "staff": 2,
+      "organization": "School of Electrical.Eng",
+      "user": 3,
+      "status": "attend",
+      "reason": "Soccer time"
+    }
+  ],
+  "event": [
+    {
+      "id": 2,
+      "event": "Pesta Tanglung UTM 2",
+      "date": "22-03-2021",
+      "timeslot": "07:30 pm",
+      "venue": "Tasik Ilmu UTM",
+      "organization": "Pesta Tanglung UTM",
+      "user": 2,
+      "status": "reject",
+      "contactNo": "011-12340220",
+      "letter": "UTM 10-A Surat Rasmi"
+    },
+    {
+      "id": 3,
+      "event": "Pesta Tanglung UTM 3",
+      "date": "22-03-2021",
+      "timeslot": "07:30 pm",
+      "venue": "Tasik Ilmu UTM",
+      "organization": "Pesta Tanglung UTM",
+      "user": 2,
+      "status": "approve",
+      "contactNo": "011-12340220",
+      "letter": "UTM 10-A Surat Rasmi"
+    },
+    {
+      "id": 4,
+      "event": "Pesta Tanglung UTM 4",
+      "date": "22-03-2021",
+      "timeslot": "07:30 pm",
+      "venue": "Tasik Ilmu UTM",
+      "organization": "Pesta Tanglung UTM",
+      "user": 1,
+      "status": "attend",
+      "contactNo": "011-12340220",
+      "letter": "UTM 10-A Surat Rasmi"
+    },
+    {
+      "id": 5,
+      "event": "Pesta Tanglung UTM",
+      "date": "22-03-2021",
+      "timeslot": "07:30 pm",
+      "venue": "Tasik Ilmu UTM",
+      "organization": "Pesta Tanglung UTM",
+      "user": 1,
+      "status": "attend",
+      "contactNo": "011-12340220",
+      "letter": "UTM 10-A Surat Rasmi"
+    },
+    {
+      "id": 6,
+      "event": "JR1: Meet New Member",
+      "date": "20-03-2021",
+      "timeslot": "Night Session (8-10)",
+      "venue": "",
+      "organization": "School Of Computing",
+      "user": 2,
+      "status": "approve",
+      "contactNo": "012-363 9923",
+      "letter": "UTM CC-01 2A B"
+    }
+  ]
+}

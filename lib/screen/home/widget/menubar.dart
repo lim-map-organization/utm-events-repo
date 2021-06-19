@@ -8,12 +8,12 @@ class MenuBar extends StatelessWidget {
     "staff": {
       "task": ["View\nEvent", "View\nMeet"],
       "icon": ["celebrate.png", "meet.png"],
-      "screen": ["/app-list","/event-list"]
+      "screen": ["/event-list","/app-list"]
     },
     "student": {
       "task": ["Add\nEvent", "Add\nMeet", "View\nEvent", "View\nMeet"],
       "icon": ["calendar.png", "memo.png", "bookmarks.png", "notes.png"],
-      "screen": ["/app-form","/event-form","/app-list","/event-list"]
+      "screen": ["/event-form","/app-form","/event-list","/app-list"]
     }
   };
   //const MenuBar({ Key? key }) : super(key: key);

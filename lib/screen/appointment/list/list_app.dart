@@ -61,7 +61,7 @@ class AppListState extends State<AppList> {
   }
 
   void updateApp({int index, Appointment app}) async {
-    app.user = widget.user.id;
+    //app.user = widget.user.id;
     //app.id = index;
     Appointment _app = await AppService.updateAppointment(app);
     setState(() {

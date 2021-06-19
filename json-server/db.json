@@ -140,7 +140,7 @@
       "staff": 2,
       "organization": "School of Mechanical.Eng",
       "user": 3,
-      "status": "pending",
+      "status": "approve",
       "reason": "Euro cup"
     },
     {
@@ -153,17 +153,6 @@
       "user": 3,
       "status": "attend",
       "reason": "Soccer time"
-    },
-    {
-      "id": 8,
-      "title": "Map Project ",
-      "date": "02-07-2021",
-      "time": "03:30 pm",
-      "staff": 2,
-      "organization": "School Of Computing",
-      "user": 6,
-      "status": "pending",
-      "reason": "Talking about the MAP Project"
     },
     {
       "id": 9,
@@ -183,8 +172,8 @@
       "time": "07:30pm",
       "staff": 2,
       "organization": "School Of Computing",
-      "user": 6,
-      "status": "pending",
+      "user": 2,
+      "status": "approve",
       "reason": "Do assignment "
     },
     {
@@ -197,21 +186,64 @@
       "user": 6,
       "status": "pending",
       "reason": "Homework Day"
+    },
+    {
+      "id": 12,
+      "title": "Portugal vs German",
+      "date": "20-06-2021",
+      "time": "12:00am",
+      "staff": 2,
+      "organization": "School Of Computing",
+      "user": 6,
+      "status": "pending",
+      "reason": "Goal 2-4 Portugal Lose"
+    },
+    {
+      "id": 14,
+      "title": "Portugal vs German",
+      "date": "20-06-2021",
+      "time": "12:00pm",
+      "staff": 2,
+      "organization": "School Of Computing",
+      "user": 6,
+      "status": "approve",
+      "reason": "German win 4-2"
+    },
+    {
+      "id": 15,
+      "title": "Kemba Walker to OKC",
+      "date": "19-06-2021",
+      "time": "09:00pm",
+      "staff": 2,
+      "organization": "School Of Computing",
+      "user": 6,
+      "status": "approve",
+      "reason": "Trade back Al-Hoford"
+    },
+    {
+      "id": 16,
+      "title": "Clipper vs Jazz",
+      "date": "20-06-2021",
+      "time": "10:30am",
+      "staff": 2,
+      "organization": "School Of Computing",
+      "user": 6,
+      "status": "attend",
+      "reason": "Jazz why u lose"
+    },
+    {
+      "id": 17,
+      "title": "Meet with Kemba Walker",
+      "date": "20-06-2021",
+      "time": "06:30pm",
+      "staff": 2,
+      "organization": "School Of Computing",
+      "user": 6,
+      "status": "attend",
+      "reason": "Lets Meet at OKC"
     }
   ],
   "event": [
-    {
-      "id": 2,
-      "event": "Pesta Tanglung UTM 2",
-      "date": "22-03-2021",
-      "timeslot": "07:30 pm",
-      "venue": "Tasik Ilmu UTM",
-      "organization": "Pesta Tanglung UTM",
-      "user": 2,
-      "status": "reject",
-      "contactNo": "011-12340220",
-      "letter": "UTM 10-A Surat Rasmi"
-    },
     {
       "id": 3,
       "event": "Pesta Tanglung UTM 3",
@@ -261,18 +293,6 @@
       "letter": "UTM CC-01 2A B"
     },
     {
-      "id": 7,
-      "event": "JR1: Pesta Tangung ",
-      "date": "30-12-2021",
-      "timeslot": "Whole Day",
-      "venue": "",
-      "organization": "School Of Computing",
-      "user": 6,
-      "status": "pending",
-      "contactNo": "012-34567532",
-      "letter": "UTM L-0120"
-    },
-    {
       "id": 8,
       "event": "JR1: Pesta Tanglung UTM",
       "date": "12-12-2021",
@@ -283,6 +303,18 @@
       "status": "pending",
       "contactNo": "012-36521234",
       "letter": "L012"
+    },
+    {
+      "id": 9,
+      "event": "Press Conference Clipper",
+      "date": "20-06-2021",
+      "timeslot": "Whole Day",
+      "venue": "",
+      "organization": "School Of Computing",
+      "user": 6,
+      "status": "approve",
+      "contactNo": "013-5563612",
+      "letter": "UTM L-02"
     }
   ]
 }

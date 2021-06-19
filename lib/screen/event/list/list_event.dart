@@ -61,7 +61,7 @@ class EventListState extends State<EventList> {
   }
 
   void updateEvent({int index, Event event}) async {
-    event.user = widget.user.id;
+    //event.user = widget.user.id;
     //app.id = index;
     Event _event = await EventService.updateEvent(event);
     setState(() {

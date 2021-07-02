@@ -8,6 +8,8 @@ import 'package:map_project/services/auth/auth_service.dart';
 import 'package:map_project/services/auth/auth_service_rest.dart';
 import 'package:map_project/services/event/event_service.dart';
 import 'package:map_project/services/event/event_service_rest.dart';
+import 'package:map_project/services/news/new_service.dart';
+import 'package:map_project/services/news/new_service_mock.dart';
 import 'package:map_project/services/rest.dart';
 
 GetIt dependency = GetIt.instance;
@@ -20,6 +22,7 @@ void init() {
   dependency.registerLazySingleton<AuthService>(() => AuthServiceRest());
   dependency.registerLazySingleton<AppService>(() => AppServiceRest());
   dependency.registerLazySingleton<EventService>(() => EventServiceRest());
+  dependency.registerLazySingleton<NewsService>(() => NewsServiceMock());
 
   //View models
   dependency.registerLazySingleton<UserViewmodel>(() => UserViewmodel());

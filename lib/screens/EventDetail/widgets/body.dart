@@ -5,6 +5,8 @@ import 'package:map_project/screens/EventDetail/eventdetail_viewmodel.dart';
 import 'package:map_project/screens/user/user_viewmodel.dart';
 import 'package:map_project/screens/view.dart';
 
+import 'head.dart';
+
 class Body extends StatelessWidget {
   EventInfo event;
   Body({required this.event});
@@ -20,22 +22,11 @@ class Body extends StatelessWidget {
       builder: (context, viewmodel, progressBuilder) => SingleChildScrollView(
         child: Column(
           children: [
-            Center(
-              child: Text(
-                'EVENT DETAIL',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30.0,
-                ),
-              ),
-            ),
-            Center(
-              child: Image(
-                image: AssetImage('asset/calendar1.png'),
-                height: MediaQuery.of(context).size.height *1/5,
-                width: MediaQuery.of(context).size.height *3/4,
-              ),
-            ),
+            Head(
+            title: "Book Event Here",
+            desc: "Approve / Reject the event",
+            image: "event.png",
+          ),
             Text(
               'Title',
               style: TextStyle(

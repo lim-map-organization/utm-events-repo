@@ -22,12 +22,46 @@ class DrawerWidget extends StatelessWidget {
         child: Column(
           children: <Widget>[
             DrawerHeader(
-              child: Column(
-                children: [
-                  Image(image: AssetImage('asset/boy.png'), height: MediaQuery.of(context).size.height*1/8,),
-                  Text('${viewmodel.user.username}\n${viewmodel.user.role} | ${viewmodel.user.faculty}'),
+               decoration: BoxDecoration(
+          color: Colors.blueGrey,
+        ),
+              child: Stack(
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.centerRight+ Alignment(0.2, -0.3),
+                    child: Image.asset('asset/boy.png',height: 110,),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft+ Alignment(0.1, -0.5),
+                    child: Text(
+                      '${viewmodel.user.username}',
+                      style: TextStyle(color: Colors.white, fontSize: 30.0),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft + Alignment(0.1, 0),
+                    child: Text(
+                      '${viewmodel.user.faculty.replaceAll("School of","")}',
+                      style: TextStyle(
+                        color: Colors.white70,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft + Alignment(0.1, .5),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      child:Padding(
+                        padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                        child: Text('${viewmodel.user.role.replaceAll("s","S")}', style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),),
+                      ) ,
+                      ),
+                  ),
                 ],
-              ),
+                ),
             ),
             Expanded(
               child: Column(

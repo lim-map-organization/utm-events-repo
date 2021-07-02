@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:map_project/screens/Register/register_viewmodel.dart';
+import 'package:map_project/screens/Register/widgets/head.dart';
 import 'package:map_project/screens/view.dart';
 
 class Body extends StatelessWidget {
@@ -11,170 +12,181 @@ class Body extends StatelessWidget {
       progressBuilder: (context, viewmodel) => Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: Center (child: CircularProgressIndicator()),
+        child: Center(child: CircularProgressIndicator()),
       ),
       builder: (context, viewmodel, progressBuilder) => SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Text(
-                'APPOINTMENT WITH US!',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30.0,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(0, 10, 0, 30),
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(30, 10, 10, 10),
+                child: Head(
+                  title: "Join Us Now",
+                  desc: "Enter your basic information",
+                  image: "boy.png",
                 ),
               ),
-            ),
-            Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  _buildTextFormField(
-                    suffixicon: null,
-                    label: 'Username',
-                    hint: 'Enter your username.',
-                    icon: Icon(Icons.account_box),
-                    isObscure: false,
-                    validator: (val) {
-                      return val.length >= 6 ? null : 'Username must contains at least 6 characters long.';
-                    },
-                    onChanged: (val) {
-                      viewmodel.username = val;
-                    }
-                  ),
-                  _buildTextFormField(
-                    suffixicon: IconButton(
-                      icon: viewmodel.showPassword ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
-                      color: Theme.of(context).primaryColorDark,
-                      onPressed: () {
-                        viewmodel.showPassword = !viewmodel.showPassword;
-                      },
-                    ),
-                    label: 'Password',
-                    hint: 'Enter your password.',
-                    icon: Icon(Icons.lock),
-                    isObscure: !viewmodel.showPassword,
-                    validator: (val) {
-                      return val.length >= 8 ? null : 'Password must contains at least 8 characters long.';
-                    },
-                    onChanged: (val) {
-                      viewmodel.password = val;
-                    }
-                  ),
-                  _buildTextFormField(
-                    suffixicon: null,
-                    label: 'Password Confirmation',
-                    hint: 'Enter your password again.',
-                    icon: Icon(Icons.lock),
-                    isObscure: !viewmodel.showPassword,
-                    validator: (val) {
-                      return viewmodel.cpassword == viewmodel.password ? null : 'Password does not match.';
-                    },
-                    onChanged: (val) {
-                      viewmodel.cpassword = val;
-                    }
-                  ),
-                  _buildTextFormField(
-                    suffixicon: null,
-                    label: 'Your Full Name',
-                    hint: 'Enter your fullname.',
-                    icon: Icon(Icons.people),
-                    isObscure: false,
-                    validator: (val) {
-                      return val.length > 0 ? null : 'Name field must be filled.';
-                    },
-                    onChanged: (val) {
-                      viewmodel.fullname = val;
-                    }
-                  ),
-                  _buildTextFormField(
-                    suffixicon: null,
-                    label: 'Phone Number',
-                    hint: 'Enter your phone number.',
-                    icon: Icon(Icons.phone),
-                    isObscure: false,
-                    validator: (val) {
-                      return val.length >= 10 ? null : 'Phone must be at least 10 characters long.';
-                    },
-                    onChanged: (val) {
-                      viewmodel.phone = val;
-                    }
-                  ),
-                  _buildDropDown(
-                    label: 'Role',
-                    hint: 'Pick your role.',
-                    icon: Icon(Icons.person),
-                    items: 
-                    [
-                      DropdownMenuItem(
-                        child: Text('Student'),
-                        value: 'student',
-                      ),
-                      DropdownMenuItem(
-                        child: Text('Staff'),
-                        value: 'staff',
-                      ),
-                    ],
-                    validator: (val) {
-                      return val != null ? null : 'Role must be selected.';
-                    },
-                    onChanged: (val) {
-                      viewmodel.role = val;
-                    }
-                  ),
-                  _buildDropDown(
-                    label: 'Faculty/School',
-                    hint: 'Pick your faculty/school.',
-                    icon: Icon(Icons.school),
-                    items: 
-                    [
-                      DropdownMenuItem(
-                        child: Text('School of Computing'),
-                        value: 'School of Computing',
-                      ),
-                      DropdownMenuItem(
-                        child: Text('School of Civil Engineering'),
-                        value: 'School of Civil Engineering',
-                      ),
-                      DropdownMenuItem(
-                        child: Text('School of Electrical Engineering'),
-                        value: 'School of Electrical Engineering',
-                      ),
-                      DropdownMenuItem(
-                        child: Text('School of Mechanical Engineering'),
-                        value: 'School of Mechanical Engineering',
-                      ),
-                      DropdownMenuItem(
-                        child: Text('School of Chemical and Energy Engineering'),
-                        value: 'School of Chemical and Energy Engineering',
-                      ),
-                      DropdownMenuItem(
-                        child: Text('School of Biosciences & Medical Engineering'),
-                        value: 'School of Biosciences & Medical Engineering',
-                      ),
-                    ],
-                    validator: (val) {
-                      return val != null ? null : 'Faculty must be selected.';
-                    },
-                    onChanged: (val) {
-                      viewmodel.faculty = val;
-                    }
-                  ),
-                  viewmodel.showErrorMsg ? Text(
-                    'Failed to register!',
-                    style: TextStyle(
-                      color: Colors.red,
-                    ),
-                  ) : Text(''),
-                  SizedBox(height: 30.0),
-                  Row(
-                    children: [
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    _buildTextFormField(
+                        suffixicon: null,
+                        label: 'Username',
+                        hint: 'Enter your username.',
+                        icon: Icon(Icons.account_box),
+                        isObscure: false,
+                        validator: (val) {
+                          return val.length >= 6
+                              ? null
+                              : 'Username must contains at least 6 characters long.';
+                        },
+                        onChanged: (val) {
+                          viewmodel.username = val;
+                        }),
+                    _buildTextFormField(
+                        suffixicon: IconButton(
+                          icon: viewmodel.showPassword
+                              ? Icon(Icons.visibility)
+                              : Icon(Icons.visibility_off),
+                          color: Theme.of(context).primaryColorDark,
+                          onPressed: () {
+                            viewmodel.showPassword = !viewmodel.showPassword;
+                          },
+                        ),
+                        label: 'Password',
+                        hint: 'Enter your password.',
+                        icon: Icon(Icons.lock),
+                        isObscure: !viewmodel.showPassword,
+                        validator: (val) {
+                          return val.length >= 8
+                              ? null
+                              : 'Password must contains at least 8 characters long.';
+                        },
+                        onChanged: (val) {
+                          viewmodel.password = val;
+                        }),
+                    _buildTextFormField(
+                        suffixicon: null,
+                        label: 'Password Confirmation',
+                        hint: 'Enter your password again.',
+                        icon: Icon(Icons.lock),
+                        isObscure: !viewmodel.showPassword,
+                        validator: (val) {
+                          return viewmodel.cpassword == viewmodel.password
+                              ? null
+                              : 'Password does not match.';
+                        },
+                        onChanged: (val) {
+                          viewmodel.cpassword = val;
+                        }),
+                    _buildTextFormField(
+                        suffixicon: null,
+                        label: 'Your Full Name',
+                        hint: 'Enter your fullname.',
+                        icon: Icon(Icons.people),
+                        isObscure: false,
+                        validator: (val) {
+                          return val.length > 0
+                              ? null
+                              : 'Name field must be filled.';
+                        },
+                        onChanged: (val) {
+                          viewmodel.fullname = val;
+                        }),
+                    _buildTextFormField(
+                        suffixicon: null,
+                        label: 'Phone Number',
+                        hint: 'Enter your phone number.',
+                        icon: Icon(Icons.phone),
+                        isObscure: false,
+                        validator: (val) {
+                          return val.length >= 10
+                              ? null
+                              : 'Phone must be at least 10 characters long.';
+                        },
+                        onChanged: (val) {
+                          viewmodel.phone = val;
+                        }),
+                    _buildDropDown(
+                        label: 'Role',
+                        hint: 'Pick your role.',
+                        icon: Icon(Icons.person),
+                        items: [
+                          DropdownMenuItem(
+                            child: Text('Student'),
+                            value: 'student',
+                          ),
+                          DropdownMenuItem(
+                            child: Text('Staff'),
+                            value: 'staff',
+                          ),
+                        ],
+                        validator: (val) {
+                          return val != null ? null : 'Role must be selected.';
+                        },
+                        onChanged: (val) {
+                          viewmodel.role = val;
+                        }),
+                    _buildDropDown(
+                        label: 'Faculty/School',
+                        hint: 'Pick your faculty/school.',
+                        icon: Icon(Icons.school),
+                        items: [
+                          DropdownMenuItem(
+                            child: Text('School of Computing'),
+                            value: 'School of Computing',
+                          ),
+                          DropdownMenuItem(
+                            child: Text('School of Civil Engineering'),
+                            value: 'School of Civil Engineering',
+                          ),
+                          DropdownMenuItem(
+                            child: Text('School of Electrical Engineering'),
+                            value: 'School of Electrical Engineering',
+                          ),
+                          DropdownMenuItem(
+                            child: Text('School of Mechanical Engineering'),
+                            value: 'School of Mechanical Engineering',
+                          ),
+                          DropdownMenuItem(
+                            child:
+                                Text('School of Chemical and Energy Engineering'),
+                            value: 'School of Chemical and Energy Engineering',
+                          ),
+                          DropdownMenuItem(
+                            child: Text(
+                                'School of Biosciences & Medical Engineering'),
+                            value: 'School of Biosciences & Medical Engineering',
+                          ),
+                        ],
+                        validator: (val) {
+                          return val != null ? null : 'Faculty must be selected.';
+                        },
+                        onChanged: (val) {
+                          viewmodel.faculty = val;
+                        }),
+                    viewmodel.showErrorMsg
+                        ? Text(
+                            'Failed to register!',
+                            style: TextStyle(
+                              color: Colors.red,
+                            ),
+                          )
+                        : Text(''),
+                    SizedBox(height: 10.0),
+                    Row(children: [
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: ElevatedButton(
-                            child: Text('Register'),
-                            onPressed: () async{
+                            style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 20),
+                            ),
+                            child: Text('Register', style: TextStyle(fontSize: 20.0)),
+                            onPressed: () async {
                               if (_formKey.currentState!.validate()) {
                                 final _result = await viewmodel.registration();
                                 if (_result != null) {
@@ -183,30 +195,30 @@ class Body extends StatelessWidget {
                               }
                             },
                           ),
+                          
                         ),
                       ),
-                    ]
-                  ),
-                ],
+                    ]),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Padding _buildTextFormField({label, hint, onChanged, isObscure, icon, validator, suffixicon}) {
-    return 
-    Padding(
+  Padding _buildTextFormField(
+      {label, hint, onChanged, isObscure, icon, validator, suffixicon}) {
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: TextFormField(
         decoration: InputDecoration(
-          labelText: label,
-          hintText: hint,
-          icon: icon,
-          suffixIcon: suffixicon != null ? suffixicon : null
-        ),
+            labelText: label,
+            hintText: hint,
+            icon: icon,
+            suffixIcon: suffixicon != null ? suffixicon : null),
         obscureText: isObscure,
         validator: validator,
         onChanged: onChanged,
@@ -215,15 +227,11 @@ class Body extends StatelessWidget {
   }
 
   Padding _buildDropDown({label, hint, icon, items, onChanged, validator}) {
-    return
-    Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: DropdownButtonFormField(
-        decoration: InputDecoration(
-          labelText: label,
-          hintText: hint,
-          icon: icon
-        ),
+        decoration:
+            InputDecoration(labelText: label, hintText: hint, icon: icon),
         items: items,
         validator: validator,
         onChanged: onChanged,

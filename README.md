@@ -1,16 +1,18 @@
-# map_project
+# UTM-EVENTS MAP Project
 
-A new Flutter project.
+UTM EVENTS is a mobile application which helps UTM students to book an appointment with the lecturers. In addition, they also can book the events from the authorities with the official letter code.
 
-## Getting Started
+## Release 1A: User Account Management
+Includes US001: Register and US002: Login
+```
+Version 1.0: Register Module
+⚒️ New User select role (student/staff) and organization
+⚒️ New User fill in username and password
+⚒️ New User fill in email and phone 
+⚒️ New User Register
+<hr>
+Version 1.01: Login Module
+⚒️ Existing User enters the username and password
+⚒️ Existing User log in the UTM EVENTS
+```
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

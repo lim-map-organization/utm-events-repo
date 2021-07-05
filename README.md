@@ -60,7 +60,7 @@ Version 2.4: Update Event Application Status
 ⚒️ User accepts/reject the particular appointment application  
 
 ```
-## Release 2: Schedule Management
+## Release 3: Schedule Management
 Includes US009: View appointment application schedule, US010 View Event Application Schedule
 ```
 Version 3.0: View Appointment Application Schedule

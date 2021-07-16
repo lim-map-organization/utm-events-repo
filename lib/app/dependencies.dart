@@ -26,6 +26,6 @@ void init() {
 
   //View models
   dependency.registerLazySingleton<UserViewmodel>(() => UserViewmodel());
-  dependency.registerSingleton<AppListViewmodel>(AppListViewmodel());
-  dependency.registerSingleton<EventListViewmodel>(EventListViewmodel());
+  dependency.registerLazySingleton<AppListViewmodel>(() => AppListViewmodel());
+  dependency.registerLazySingleton<EventListViewmodel>(() => EventListViewmodel());
 }

@@ -43,7 +43,9 @@ class Body extends StatelessWidget {
                               : 'Username must contains at least 6 characters long.';
                         },
                         onChanged: (val) {
-                          viewmodel.username = val;
+                          if (val != null) {
+                            viewmodel.username = val;
+                          } else {}
                         }),
                     _buildTextFormField(
                         suffixicon: IconButton(
@@ -135,34 +137,78 @@ class Body extends StatelessWidget {
                         icon: Icon(Icons.school),
                         items: [
                           DropdownMenuItem(
-                            child: Text('School of Computing'),
+                            //child: Text('School of Computing'),
+                            child: new Container(
+                              width: 170.0,
+                              child: new Text(
+                                "School of Computing",
+                                overflow: TextOverflow.visible,
+                              ),
+                            ),
                             value: 'School of Computing',
                           ),
                           DropdownMenuItem(
-                            child: Text('School of Civil Engineering'),
+                            //child: Text('School of Civil Engineering'),
+                            child: new Container(
+                              width: 170.0,
+                              child: new Text(
+                                "School of Civil Engineering",
+                                overflow: TextOverflow.visible,
+                              ),
+                            ),
                             value: 'School of Civil Engineering',
                           ),
                           DropdownMenuItem(
-                            child: Text('School of Electrical Engineering'),
+                            //child: Text('School of Electrical Engineering'),
+                            child: new Container(
+                              width: 170.0,
+                              child: new Text(
+                                "School of Electrical Engineering",
+                                overflow: TextOverflow.visible,
+                              ),
+                            ),
                             value: 'School of Electrical Engineering',
                           ),
                           DropdownMenuItem(
-                            child: Text('School of Mechanical Engineering'),
+                            //child: Text('School of Mechanical Engineering'),
+                            child: new Container(
+                              width: 170.0,
+                              child: new Text(
+                                "School of Mechanical Engineering",
+                                overflow: TextOverflow.visible,
+                              ),
+                            ),
                             value: 'School of Mechanical Engineering',
                           ),
                           DropdownMenuItem(
-                            child:
-                                Text('School of Chemical and Energy Engineering'),
+                            //child: Text('School of Chemical and Energy Engineering'),
+                            child: new Container(
+                              width: 170.0,
+                              child: new Text(
+                                "School of Chemical and Energy Engineering",
+                                overflow: TextOverflow.visible,
+                              ),
+                            ),
                             value: 'School of Chemical and Energy Engineering',
                           ),
                           DropdownMenuItem(
-                            child: Text(
-                                'School of Biosciences & Medical Engineering'),
-                            value: 'School of Biosciences & Medical Engineering',
+                            //child:
+                            //    Text('School of Biosciences & Medical Engineering'),
+                            child: new Container(
+                              width: 170.0,
+                              child: new Text(
+                                "School of Biosciences & Medical Engineering",
+                                overflow: TextOverflow.visible,
+                              ),
+                            ),
+                            value:
+                                'School of Biosciences & Medical Engineering',
                           ),
                         ],
                         validator: (val) {
-                          return val != null ? null : 'Faculty must be selected.';
+                          return val != null
+                              ? null
+                              : 'Faculty must be selected.';
                         },
                         onChanged: (val) {
                           viewmodel.faculty = val;
@@ -185,7 +231,8 @@ class Body extends StatelessWidget {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 20, vertical: 20),
                             ),
-                            child: Text('Register', style: TextStyle(fontSize: 20.0)),
+                            child: Text('Register',
+                                style: TextStyle(fontSize: 20.0)),
                             onPressed: () async {
                               if (_formKey.currentState!.validate()) {
                                 final _result = await viewmodel.registration();
@@ -195,7 +242,6 @@ class Body extends StatelessWidget {
                               }
                             },
                           ),
-                          
                         ),
                       ),
                     ]),

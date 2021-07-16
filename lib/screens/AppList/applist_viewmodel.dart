@@ -13,7 +13,7 @@ class AppListViewmodel extends Viewmodel {
   Future<List<AppInfo>?>? _appListFuture;
 
   AppListViewmodel() {
-    getAppList(_user.id);
+    _appListFuture = getAppList(_user.id);
   }
 
   get appList => _appList;

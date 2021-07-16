@@ -41,6 +41,7 @@ class LoginViewmodel extends Viewmodel {
         await _service.login(username: _username, password: _password);
     if (_result == null) {
       _showErrorMsg = true;
+      return null;
     } else {
       _showErrorMsg = false;
       _user.user = _result;

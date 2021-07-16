@@ -3,15 +3,15 @@ import 'package:map_project/app/dependencies.dart';
 import 'package:map_project/models/appinfo.dart';
 import 'package:map_project/screens/AppDetail/appdetail_viewmodel.dart';
 import 'package:map_project/screens/AppDetail/widgets/head.dart';
-import 'package:map_project/screens/AppList/applist_viewmodel.dart';
 import 'package:map_project/screens/user/user_viewmodel.dart';
 import 'package:map_project/screens/view.dart';
 
 class Body extends StatelessWidget {
-  final int index;
-  Body({required this.index});
+  AppInfo data;
+  Body({required this.data});
   @override
   Widget build(BuildContext context) {
+    print (dependency<UserViewmodel>().role);
     return View(
       viewmodel: AppDetailViewmodel(),
       progressBuilder: (context, viewmodel) => Container(
@@ -52,7 +52,7 @@ class Body extends StatelessWidget {
               ),
             ),
             Text(
-              '${dependency<AppListViewmodel>().appList[index].name}',
+              '${data.name}',
               style: TextStyle(
                   color: Theme.of(context).primaryColorDark,
                   fontSize: 15.0,
@@ -69,7 +69,7 @@ class Body extends StatelessWidget {
               ),
             ),
             Text(
-              '${dependency<AppListViewmodel>().appList[index].dateAndTime}',
+              '${data.dateAndTime}',
               style: TextStyle(
                   color: Theme.of(context).primaryColorDark,
                   fontSize: 15.0,
@@ -86,7 +86,7 @@ class Body extends StatelessWidget {
               ),
             ),
             Text(
-              '${dependency<AppListViewmodel>().appList[index].studentname}',
+              '${data.studentname}',
               style: TextStyle(
                   color: Theme.of(context).primaryColorDark,
                   fontSize: 15.0,
@@ -103,7 +103,7 @@ class Body extends StatelessWidget {
               ),
             ),
             Text(
-              '${dependency<AppListViewmodel>().appList[index].staffname}',
+              '${data.staffname}',
               style: TextStyle(
                   color: Theme.of(context).primaryColorDark,
                   fontSize: 15.0,
@@ -120,7 +120,7 @@ class Body extends StatelessWidget {
               ),
             ),
             Text(
-              '${dependency<AppListViewmodel>().appList[index].status}',
+              '${data.status}',
               style: TextStyle(
                   color: Theme.of(context).primaryColorDark,
                   fontSize: 15.0,
@@ -130,17 +130,17 @@ class Body extends StatelessWidget {
               height: 10.0,
             ),
             dependency<UserViewmodel>().role == 'staff' &&
-                    dependency<AppListViewmodel>().appList[index].status ==
-                        'Pending'
+                    data.status == 'Pending'
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () {
-                          viewmodel.updateStatus(
-                              index,
-                              dependency<AppListViewmodel>().appList[index],
-                              'Accepted');
+                        onPressed: () async {
+                          final _result = await viewmodel.updateStatus(data.id, data, 'Accepted');
+                          viewmodel.turnBusy();
+                          data = _result;
+                          Navigator.pop(context);
+                          viewmodel.turnIdle();
                         },
                         child: Text('Accept'),
                       ),
@@ -148,11 +148,12 @@ class Body extends StatelessWidget {
                         width: 30.0,
                       ),
                       ElevatedButton(
-                        onPressed: () {
-                          viewmodel.updateStatus(
-                              index,
-                              dependency<AppListViewmodel>().appList[index],
-                              'Declined');
+                        onPressed: () async {
+                          final _result = await viewmodel.updateStatus(data.id, data, 'Declined');
+                          viewmodel.turnBusy();
+                          data = _result;
+                          Navigator.pop(context);
+                          viewmodel.turnIdle();
                         },
                         child: Text('Decline'),
                       ),

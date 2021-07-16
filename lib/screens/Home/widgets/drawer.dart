@@ -91,7 +91,7 @@ class DrawerWidget extends StatelessWidget {
             _buildListTile(
               title: Text('Log Out'),
               ontap: () {
-                viewmodel.user = Users();
+                viewmodel.user = null;
                 Navigator.popAndPushNamed(context, loginScreen);
               }
             ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:map_project/app/dependencies.dart';
+import 'package:map_project/app/route.dart';
 import 'package:map_project/models/eventinfo.dart';
 import 'package:map_project/screens/EventDetail/eventdetail_viewmodel.dart';
+import 'package:map_project/screens/Home/home.dart';
 import 'package:map_project/screens/user/user_viewmodel.dart';
 import 'package:map_project/screens/view.dart';
 
@@ -155,7 +157,7 @@ class Body extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.0,),
-            dependency<UserViewmodel>().role == 'student' ? Text('') : 
+            dependency<UserViewmodel>().role == 'student' || event.status != 'Pending' ? Text('') : 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -165,6 +167,7 @@ class Body extends StatelessWidget {
                     if (_result != null) {
                       viewmodel.turnBusy();
                       event = _result;
+                      Navigator.pop(context);
                       viewmodel.turnIdle();
                     }
                   }, 
@@ -177,6 +180,7 @@ class Body extends StatelessWidget {
                     if (_result != null) {
                       viewmodel.turnBusy();
                       event = _result;
+                      Navigator.pop(context);
                       viewmodel.turnIdle();
                     }
                   }, 

@@ -10,8 +10,10 @@ class AppServiceRest implements AppService{
   Future<List<AppInfo>?>? getAppList({required String id}) async {
     try {
       final json = await rest.get('app/$id');
+      print("success");
       return (json as List).map((item) { return AppInfo.fromJson(item);}).toList();
     } catch (e) {
+      print("error");
       return null;
     }
   }

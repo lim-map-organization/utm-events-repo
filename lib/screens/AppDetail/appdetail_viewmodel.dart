@@ -14,7 +14,6 @@ class AppDetailViewmodel extends Viewmodel {
     appinfo.status = status;
     turnBusy();
     final _result = await _service.updateStatus(id: appinfo.id, appinfo: appinfo);
-    if(_result != null) _applist.appList[index] = _result;
     turnIdle();
     return _result;
   }

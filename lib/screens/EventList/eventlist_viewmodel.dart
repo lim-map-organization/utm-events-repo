@@ -12,9 +12,9 @@ class EventListViewmodel extends Viewmodel {
 
   EventListViewmodel() {
     if (_user.role == 'student') {
-      getEventListById(_user.id);
+      _eventListFuture = getEventListById(_user.id);
     } else {
-      getEventList();
+      _eventListFuture = getEventList();
     }
   }
   get eventList => _eventList;

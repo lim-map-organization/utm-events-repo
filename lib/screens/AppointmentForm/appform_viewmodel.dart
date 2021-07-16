@@ -1,7 +1,6 @@
 import 'package:map_project/app/dependencies.dart';
 import 'package:map_project/models/appinfo.dart';
 import 'package:map_project/models/users.dart';
-import 'package:map_project/screens/AppList/applist_viewmodel.dart';
 import 'package:map_project/screens/user/user_viewmodel.dart';
 import 'package:map_project/screens/viewmodel.dart';
 import 'package:map_project/services/appointment/app_service.dart';
@@ -9,9 +8,8 @@ import 'package:map_project/services/appointment/app_service.dart';
 class AppFormViewmodel extends Viewmodel {
   AppService get _service => dependency();
   UserViewmodel get _user => dependency();
-  AppListViewmodel get _appList => dependency();
   AppInfo appinfo = AppInfo();
-  List<Users>? _userListByFac;
+  Future<List<Users>?>? _userListByFac;
   String _pickedDate = DateTime.now().add(const Duration(days: 2)).year.toString() + '/' + DateTime.now().add(const Duration(days: 2)).month.toString() + "/" + DateTime.now().add(const Duration(days: 2)).day.toString()
   + "  " + DateTime.now().add(const Duration(days: 2)).hour.toString().padLeft(2, '0') + ":" + DateTime.now().add(const Duration(days: 2)).minute.toString().padLeft(2, '0');
 

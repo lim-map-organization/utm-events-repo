@@ -80,8 +80,12 @@ class RegisterViewmodel extends Viewmodel {
   Future<Users?> registration() async {
     turnBusy();
     final Users? _result = await _service.registration(user: _user);
-    if (_result == null) {_showErrorMsg = true;}
-    else {_showErrorMsg = false; _user = _result;}
+    if (_result == null) {
+      _showErrorMsg = true;
+    } else {
+      _showErrorMsg = false;
+      _user = _result;
+    }
     turnIdle();
     return _result;
   }

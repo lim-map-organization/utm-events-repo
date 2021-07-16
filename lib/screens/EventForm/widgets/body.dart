@@ -38,8 +38,9 @@ class Body extends StatelessWidget {
                     onchanged: (val) {
                       viewmodel.title = val;
                     },
+                    
                     validator: (val) {
-                      return val.length >= 1
+                      return val.length <= 1
                           ? 'Event name must be filled!'
                           : null;
                     }),
@@ -98,7 +99,7 @@ class Body extends StatelessWidget {
                       viewmodel.organization = val;
                     },
                     validator: (val) {
-                      return val.length >= 1
+                      return val.length <= 1
                           ? 'Organization must be filled!'
                           : null;
                     }),
@@ -109,7 +110,7 @@ class Body extends StatelessWidget {
                       viewmodel.code = val;
                     },
                     validator: (val) {
-                      return val.length >= 1 ? 'Code must be filled!' : null;
+                      return val.length <= 1 ? 'Code must be filled!' : null;
                     }),
                 _buildTextFormField(
                     hint: 'Contact Number',

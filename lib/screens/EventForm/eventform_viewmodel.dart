@@ -1,5 +1,6 @@
 import 'package:map_project/app/dependencies.dart';
 import 'package:map_project/models/eventinfo.dart';
+import 'package:map_project/screens/EventList/eventlist_viewmodel.dart';
 import 'package:map_project/screens/user/user_viewmodel.dart';
 import 'package:map_project/screens/viewmodel.dart';
 import 'package:map_project/services/event/event_service.dart';

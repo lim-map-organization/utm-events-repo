@@ -45,7 +45,7 @@ Route<dynamic>? createRoute(settings) {
         builder: (context) => EventList(),
       );
     case appDetail:
-      return AppDetail.route(index: settings.arguments as int);
+      return AppDetail.route(data: settings.arguments as AppInfo);
     case eventDetail:
       return EventDetail.route(data: settings.arguments as EventInfo);
   }
